@@ -1,4 +1,3 @@
-# immages
 from PIL import Image
 from io import BytesIO
 import sys
@@ -9,6 +8,8 @@ def getAll():
 
 
 print (getAll())
+
+path = "C:/Users/SalvatoreInvidia/Desktop/fastapi_prova_salva/images/base_images/"
 
 # convert images
 def converting(direct, file):
@@ -21,10 +22,11 @@ def converting(direct, file):
 
     # conversione
     # se sys.argv[3] => rotate == true allora effettua una rotazione di 180° sull'asse perpendicolare all'immagine
-    if(sys.argv[3] == 'true'):
-        im.convert("RGB").rotate(180).save(buffered, "JPEG", quality=50)
-    else:
-        im.convert("RGB").save(buffered, "JPEG", quality=50)
+    # if(sys.argv[1] == 'true'):
+    #     im.convert("RGB").rotate(180).save(buffered, "JPEG", quality=50)
+    # else:
+    #     
+    im.convert("RGB").save(buffered, "JPEG", quality=50)
 
     img_str = base64.b64encode(buffered.getvalue())
 

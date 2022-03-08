@@ -8,6 +8,8 @@ import script
     
 app = FastAPI()
 
+path = "C:/Users/SalvatoreInvidia/Desktop/fastapi_prova_salva/images/base_images/"
+
 @app.get("/api")
 async def convert(direct):
     files = os.listdir("images/base_images/"+direct)
@@ -19,4 +21,3 @@ async def convert(direct):
         converted_images.append(converted)
     
     return converted_images
-
